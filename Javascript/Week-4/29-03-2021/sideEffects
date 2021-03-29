@@ -1,0 +1,41 @@
+
+# Side Effects
+
+A side effect is any application state change that is observable outside the called function other than its return value. Side effects include:
+
+-   Modifying any external variable or object property (e.g., a global variable, or a variable in the parent function scope chain)
+-   Logging to the console
+-   Writing to the screen
+-   Writing to a file
+-   Writing to the network
+-   Triggering any external process
+-   Calling any other functions with side-effects
+
+Side-effect actions need to be isolated from the rest of the software. If side effects are kept separate from the rest of your program logic, the software will be much easier to extend, refactor, debug, test, and maintain.
+
+Side effects are mostly avoided in functional programming, which makes the effects of a program much easier to understand, and much easier to test.
+
+## EXAMPLES OF SIDE EFFECTS IN JAVASCRIPT
+
+Looping through an array using `for()` loop:
+```
+let numbers = [1, 2, 3];
+
+for (let index = 0 length = numbers.length; index < length; index++) {
+	return numbers[index]
+}
+```
+
+In the code above,  "index" and "length" are side effects.
+
+The side effect of this pattern is at minimum the running index, if not the length as well -- they are available within the entire scope. 
+
+Using Array prototype methods like `map`, `forEach`, and `every` allow the developer to avoid these side effects:
+```
+let numbers = [1, 2, 3];
+
+numbers.forEach(function(number) {
+	return number;
+});
+```
+Here, there is no side effect. No "utility" variables need to be created for the looping, thus avoiding side effects. This is called "functional" programming.
