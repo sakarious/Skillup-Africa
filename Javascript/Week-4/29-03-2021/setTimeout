@@ -1,0 +1,25 @@
+# setTimeout Function
+
+The setTimeout function allows you to delay your functions from executing.
+
+Syntax:
+```
+setTimeout(function, time)
+```
+Examples:
+```
+let myPromise =  new  Promise(function(myResolve, myReject){
+
+setTimeout(function(){ myResolve("I love you !!");}, 3000)
+
+});
+
+  
+
+myPromise.then(function(value){
+
+console.log(value);
+
+});
+This logs "I love you" to the console after 3 seconds
+```
