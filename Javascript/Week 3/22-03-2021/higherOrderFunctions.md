@@ -24,25 +24,26 @@ Without Higher-order function
 ```
 const persons = [
 
-{ name: 'Peter', age: 16 },
+  { name: 'Peter', age: 16 },
 
-{ name: 'Mark', age: 18 },
+  { name: 'Mark', age: 18 },
 
-{ name: 'John', age: 27 },
+  { name: 'John', age: 27 },
 
-{ name: 'Jane', age: 14 },
+  { name: 'Jane', age: 14 },
 
-{ name: 'Tony', age: 24},
+  { name: 'Tony', age: 24},
 
-];const fullAge = [];for(let i = 0; i < persons.length; i++) {
+  ];
+  const fullAge = [];for(let i = 0; i < persons.length; i++) {
 
-if(persons[i].age >= 18) {
+    if(persons[i].age >= 18) {
 
-fullAge.push(persons[i]);
+     fullAge.push(persons[i]);
 
-}
+    }
 
-}
+  }
 console.log(fullAge);
 ```
 
@@ -51,16 +52,30 @@ With Higher-order function filter
 ```
 const persons = [
 
-{ name: 'Peter', age: 16 },
+  { name: 'Peter', age: 16 },
 
-{ name: 'Mark', age: 18 },
+  { name: 'Mark', age: 18 },
 
-{ name: 'John', age: 27 },
+  { name: 'John', age: 27 },
 
-{ name: 'Jane', age: 14 },
+  { name: 'Jane', age: 14 },
 
-{ name: 'Tony', age: 24},
+  { name: 'Tony', age: 24},
 
-];const fullAge = persons.filter(person => person.age >= 18);
-console.log(fullAge);
+];
+  const fullAge = persons.filter(person => person.age >= 18);
+  console.log(fullAge);
 ```
+
+Example:
+
+```
+function greeting(name) {
+  return(`Hello ${name}, welcome to skillup`)
+};
+
+function introduction(firstName, secondName, callbackFunction) {
+  let fullName = (`${firstName} ${secondName}`)
+  return callbackFunction(fullName)
+};
+console.log(introduction('adedolapo', 'snr man', greeting)); //Returns 'Hello Adedolapo snr man, welcome to skillup'
