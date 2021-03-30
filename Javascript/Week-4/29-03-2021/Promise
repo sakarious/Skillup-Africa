@@ -32,3 +32,36 @@ console.log(value);
 });
 This logs "I love you" to the console after 3 
 ```
+
+```
+const weather = true
+const date = new Promise((resolve, reject) => {
+  if (weather){
+    const dateDetails = {
+      name: "Kilimanjaro",
+      location: "Abraham Adesanya",
+      table: 5
+    }
+
+    resolve(dateDetails);
+  } else {
+    reject(new Error('Bad Weather, So no Date.'))
+  }
+})
+
+date
+.then(done => console.log(done))
+.catch(error => console.log(error))
+
+const Mydate = () => {
+  date
+  .then(done => {
+    console.log('We are going on a date')
+    console.log(done)
+  })
+
+  .catch((error) => {
+    console.log(error.message)
+  })
+}
+```
